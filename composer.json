@@ -1,0 +1,17 @@
+{
+    "name": "markwu/yin",
+    "description": "PHP library for converting Zhuyin to Pinyin and vice versa.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Markwu\\Yin\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Mark Wu"
+        }
+    ],
+    "require": {}
+}
