@@ -1,6 +1,6 @@
 <?php
 
-namespace MarkWu/Yin
+namespace Markwu\Yin;
 
 class Yin {
 
@@ -12,10 +12,10 @@ class Yin {
 
     public function __construct()
     {
-        $this->zhuyin_pinyin = json_decode(file_get_contents('data/zhuyin_pinyin.json'), true);
-        $this->pinyin_zhuyin = json_decode(file_get_contents('data/pinyin_zhuyin.json'), true);
-        $this->zhuyin_pinyin_tone = json_decode(file_get_contents('data/zhuyin_pinyin_tone.json'), true);
-        $this->pinyin_zhuyin_tone = json_decode(file_get_contents('data/pinyin_zhuyin_tone.json'), true);
+        $this->zhuyin_pinyin = json_decode(file_get_contents(__DIR__ . '/../data/zhuyin_pinyin.json'), true);
+        $this->pinyin_zhuyin = json_decode(file_get_contents(__DIR__ . '/../data/pinyin_zhuyin.json'), true);
+        $this->zhuyin_pinyin_tone = json_decode(file_get_contents(__DIR__ . '/../data/zhuyin_pinyin_tone.json'), true);
+        $this->pinyin_zhuyin_tone = json_decode(file_get_contents(__DIR__ . '/../data/pinyin_zhuyin_tone.json'), true);
     }
 
     public function toPinyin($zhuyin) {
