@@ -2,7 +2,7 @@
 
 namespace Markwu\Yin;
 
-class Zhi {
+class Zi {
     public function __construct()
     {
     }
