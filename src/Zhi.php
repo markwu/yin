@@ -13,7 +13,7 @@ class Zhi {
         return preg_match($pattern, $string) === 1;
     }
 
-    public function isfirstnchinese($string, $n) {
+    public function isFirstNChinese($string, $n) {
         $pattern = '/^[\x{4e00}-\x{9fff}\x{3400}-\x{4dbf}\x{20000}-\x{2a6df}\x{2a700}-\x{2b73f}\x{2b740}-\x{2b81f}\x{2b820}-\x{2ceaf}\x{f900}-\x{faff}\x{2f800}-\x{2fa1f}]{' . $n . ',}/u';
 
         return preg_match($pattern, $string) === 1;
