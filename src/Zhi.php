@@ -8,7 +8,7 @@ class Zhi {
     }
 
     public function isChineseOnly($string) {
-        if (!mb_check_encoding($string, 'UTF-8')) {
+        if(!mb_check_encoding($string, 'UTF-8')) {
             return false;
         }
 
@@ -18,7 +18,11 @@ class Zhi {
     }
 
     public function isFirstNChinese($string, $n) {
-        if (!mb_check_encoding($string, 'UTF-8')) {
+        if(!mb_check_encoding($string, 'UTF-8')) {
+            return false;
+        }
+
+        if(mb_strlen($string) < $n) {
             return false;
         }
 
