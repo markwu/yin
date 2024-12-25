@@ -19,10 +19,14 @@ class Yin {
     }
 
     public function toPinyin($zhuyin) {
-        $tone = mb_substr($zhuyin, -1, 1);
-        if(array_key_exists($tone, $this->zhuyin_pinyin_tone)) {
-            $tone = $this->zhuyin_pinyin_tone[$tone];
+        $prefix_tone = mb_substr($zhuyin, -1, 1, 'UTF-8');
+        $postfix_tone = mb_substr($zhuyin, 0, 1, 'UTF-8');
+        if(array_key_exists($prefix_tone, $this->zhuyin_pinyin_tone)) {
+            $tone = $this->zhuyin_pinyin_tone[$prefix_tone];
             $chars = mb_substr($zhuyin, 0, mb_strlen($zhuyin) - 1);
+        } else if(array_key_exists($postfix_tone, $this->zhuyin_pinyin_tone)) {
+            $tone = $this->zhuyin_pinyin_tone[$postfix_tone];
+            $chars = mb_substr($zhuyin, 1, mb_strlen($zhuyin)- 1);
         } else {
             $tone = 1;
             $chars = $zhuyin;
